@@ -35,10 +35,12 @@ app.post("/signup", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-    
-})
+    res.render("login");
+});
 
-
+app.post("/login", (req, res) => {
+    res.send("Logged in!");
+});
 
 
 app.listen(port, () => {
