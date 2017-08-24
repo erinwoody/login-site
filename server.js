@@ -5,6 +5,8 @@ const logger = require("morgan");
 const bodyParser = require("body-parser");
 const path = require("path");
 const sessionConfig = require("./sessionConfig");
+const users = require("./data");
+const checkAuth = require("./middlewares/checkAuth");
 const app = express();
 const port = process.env.PORT || 8000;
 
@@ -15,12 +17,13 @@ app.set("view engine", "mustache");
 
 
 //MIDDLEWARE
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "./public")));
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session(sessionConfig));
 
 app.get("/", (req, res) => {
+    console.log(req.session);
     res.render("home");
 });
 
@@ -30,7 +33,10 @@ app.get("/signup", (req, res) => {
 
 app.post("/signup", (req, res) => {
     let newUser = req.body;
+
+    console.log("newUser: ", newUser);
     users.push(newUser);
+    console.log("users: ", users);
     res.redirect("/login");
 });
 
@@ -39,7 +45,25 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-    res.send("Logged in!");
+    let reqUsername = req.body.username;
+    let reqPassword = req.body.password;
+
+    let foundUser = users.find(user => user.username === reqUsername);
+    if (!foundUser) {
+        return res.render("login", { errors: ["User not found"] });
+    }
+
+    if (foundUser.password === reqPassword) {
+        delete foundUser.password;
+        req.session.user = foundUser;
+        res.redirect("/");
+    }   else {
+        return res.render("login", { errors: ["Password does not match"] });    
+    }
+});
+
+app.get("/profile", checkAuth, (req, res) => {
+    res.render("profile", { user: req.session.user });
 });
 
 
