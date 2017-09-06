@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,18 @@
     <title>Home</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
+
 <body>
     <div class="form-box">
-    <h1>Home Page</h1>
-    <p>Welcome {{user.name}}</p>
-    <form action="/" method="POST" class="main-form">
-        <button type="submit" class="btn"><a href="/signup" class="btn-link">Sign Up</a></button>
-        <button type="submit" class="btn"><a href="/login" class="btn-link">Login</a></button>
-        <button type="submit" class="btn"><a href="/profile" class="btn-link">Profile</a></button>
-        <button type="submit" class="btn"><a href="/logout" class="btn-link">Logout</a></button>
-    </form>
+        <h1>Home Page</h1>
+        <p>Welcome {{user.name}}</p>
+        <form action="/" method="POST" class="main-form">
+            <a href="/signup" class="home-btn">Sign Up</a>
+            <a href="/login" class="home-btn">Login</a>
+            <a href="/profile" class="home-btn">Profile</a>
+            <a href="/logout" class="home-btn">Logout</a>
+        </form>
     </div>
 </body>
+
 </html>

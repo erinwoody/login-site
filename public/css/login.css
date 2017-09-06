@@ -1,11 +1,11 @@
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Futura; 
   outline: none;
   text-align: center;
-}
+} 
 
 body {
   background: #CDE8D5;
@@ -29,7 +29,7 @@ body {
 .main-form__title {
   padding: 20px 0;
   text-align: center;
-  /* font-family: Futura; */
+
 } 
 
 h1 {
@@ -64,7 +64,6 @@ h1:after {
   outline: 0;
   font-size: .7rem;
   color: lighten(#000, 40%);
-  text-transform: uppercase;
   letter-spacing: 2px;
 }  
 
@@ -83,7 +82,7 @@ main-form__body--input:focus {
   border: 0;
   font-size: .6rem;
   letter-spacing: 3px;
-  text-transform: uppercase;
+  text-align: center;
 }    
 
 .btn:last-of-type {
@@ -97,7 +96,9 @@ main-form__body--input:focus {
 }
 
 .btn-link {
+  text-align: center;
   text-decoration: none;
   color: white;
+  text-transform: uppercase;
 }
 

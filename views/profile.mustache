@@ -8,14 +8,22 @@
   <meta http-equiv="X-UA-Compatible"
     content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/profile.css">
 </head>
 
 <body>
-  <h1>{{user.name}}'s profile</h1>
-  <p>Name: {{user.name}}</p>
-  <p>Username: {{user.username}}</p>
-  <p>email: {{user.email}}</p>
+  <div class="form-box">
+        <h1>{{user.name}}'s profile</h1>
+    <form action="/login" method="POST" class="main-form">
+      <div class="main-form__body--input">
+        <p>NAME: {{user.name}}</p>
+        <p>USERNAME: {{user.username}}</p>
+        <p>EMAIL: {{user.email}}</p>
+        <a href="/" class="home-btn">HOME</a>
+        <a href="/logout" class="home-btn">LOGOUT</a>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

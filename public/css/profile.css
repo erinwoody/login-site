@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: Futura;
   outline: none;
-  text-align: center;
+  /* text-align: center; */
 }
 
 body {
@@ -26,12 +26,14 @@ body {
   box-shadow: 10px 10px 0 rgba(0,0,0,.1);
 }
 
+
 h1 {
   position: relative;
   font-size: .8rem;
-  text-transform: uppercase;
+  text-transform: uppercase; 
   letter-spacing: 3px;
   margin-bottom: 25px;
+  text-align: center;
 }  
 
 h1:after {
@@ -46,12 +48,31 @@ h1:after {
   content: "";
 }
 
+/* ~~~INPUT~~~~ */
+.main-form__body--input {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #efeded;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 10px;
+  outline: 0;
+  font-size: .9rem;
+  color: lighten(#000, 40%);
+  letter-spacing: 2px;
+}  
+
+main-form__body--input:focus {
+  background: darken(#fff, 3%);
+}
+
 /* ~~~LINKS~~~~ */
 .home-btn {
   display: block;
-  width: 48%;
-  margin-top: 10px;
-  margin-left: 5px;
+  width: 40%;
+  margin-top: 40px;
+  margin-left: 17px;
   float: left;
   background: #FCA44B;
   padding: 15px;
@@ -62,6 +83,7 @@ h1:after {
   letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
 }
 
 .home-btn:hover {
