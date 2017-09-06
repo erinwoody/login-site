@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
+    <div class="form-box">
     <h1>Log In</h1>
     {{#errors}}
     <h4>{{.}}</h4>
     {{/errors}}
-    <form action="/login" method="POST">
-        <label for="">Username</label>
-        <input type="text" 
+    <form action="/login" method="POST" class="main-form">
+        <input class="main-form__body--input"
+            type="text" 
             name="username" 
             placeholder="Username" 
             required> <br>
-        <label for="">Password</label>
-        <input type="password" 
+        <input class="main-form__body--input"
+            type="password" 
             name="name" 
-            placeholder="password123" 
+            placeholder="password" 
             required> <br>
-        <button type="Submit">Log In</button>
+        <button type="submit" class="btn"><a href="/profile" class="btn-link">Login</a></button>
     </form>
+        <p>Don't have an account? <a href="/signup">Click Here</a></p>
+    </div>
 </body>
 </html>

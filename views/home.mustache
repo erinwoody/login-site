@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <nav>
-        <a href="/signup">Sign Up</a>
-        <a href="/login">Log In</a>
-        <a href="/profile">Profile</a>
-    </nav>
+    <div class="form-box">
     <h1>Home Page</h1>
+    <p>Welcome {{user.name}}</p>
+    <form action="/" method="POST" class="main-form">
+        <button type="submit" class="btn"><a href="/signup" class="btn-link">Sign Up</a></button>
+        <button type="submit" class="btn"><a href="/login" class="btn-link">Login</a></button>
+        <button type="submit" class="btn"><a href="/profile" class="btn-link">Profile</a></button>
+        <button type="submit" class="btn"><a href="/logout" class="btn-link">Logout</a></button>
+    </form>
+    </div>
 </body>
 </html>

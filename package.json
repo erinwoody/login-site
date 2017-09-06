@@ -1,7 +1,6 @@
 {
   "name": "login-site",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +14,15 @@
     "express-session": "^1.15.5",
     "morgan": "^1.8.2",
     "mustache-express": "^1.2.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erinwoody/login-site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erinwoody/login-site/issues"
+  },
+  "homepage": "https://github.com/erinwoody/login-site#readme",
+  "description": ""
 }
